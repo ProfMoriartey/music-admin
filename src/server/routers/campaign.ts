@@ -19,7 +19,7 @@ export const campaignRouter = router({
     return await ctx.db.select().from(campaigns);
   }),
 
-  byId: protectedProcedure
+  getById: protectedProcedure
     .input(z.object({ id: z.number() }))
     .query(async ({ ctx, input }) => {
       const [campaign] = await ctx.db

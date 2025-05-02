@@ -14,6 +14,8 @@ const campaignSchema = z.object({
   budget: z.string().min(1, 'Budget is required').transform(Number),
   imageUrl: z.string().url('Must be a valid URL'),
   description: z.string().min(1, 'Description is required'),
+  targetAudience: z.string().min(1, 'Target audience is required'),
+  status: z.enum(['draft', 'active', 'completed', 'cancelled']).default('draft'),
 });
 
 type CampaignFormData = z.infer<typeof campaignSchema>;
@@ -46,7 +48,10 @@ export default function CampaignForm({ initialData, mode }: CampaignFormProps) {
 
   const onSubmit = async (data: CampaignFormData) => {
     if (mode === 'create') {
-      await createMutation.mutateAsync(data);
+      await createMutation.mutateAsync({
+        ...data,
+        status: 'draft',
+      });
     } else if (mode === 'edit' && initialData) {
       await updateMutation.mutateAsync({ ...data, id: initialData.id });
     }
@@ -165,6 +170,21 @@ export default function CampaignForm({ initialData, mode }: CampaignFormProps) {
         />
         {errors.description && (
           <p className="mt-1 text-sm text-red-600">{errors.description.message}</p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="targetAudience" className="block text-sm font-medium text-gray-700">
+          Target Audience
+        </label>
+        <input
+          type="text"
+          id="targetAudience"
+          {...register('targetAudience')}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+        />
+        {errors.targetAudience && (
+          <p className="mt-1 text-sm text-red-600">{errors.targetAudience.message}</p>
         )}
       </div>
 
