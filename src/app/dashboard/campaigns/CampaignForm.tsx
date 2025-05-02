@@ -60,14 +60,14 @@ export default function CampaignForm({ initialData, mode }: CampaignFormProps) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
-        <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="title" className="block text-sm font-medium text-gray-900">
           Title
         </label>
         <input
           type="text"
           id="title"
           {...register('title')}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
         />
         {errors.title && (
           <p className="mt-1 text-sm text-red-600">{errors.title.message}</p>
@@ -75,14 +75,14 @@ export default function CampaignForm({ initialData, mode }: CampaignFormProps) {
       </div>
 
       <div>
-        <label htmlFor="brandName" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="brandName" className="block text-sm font-medium text-gray-900">
           Brand Name
         </label>
         <input
           type="text"
           id="brandName"
           {...register('brandName')}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
         />
         {errors.brandName && (
           <p className="mt-1 text-sm text-red-600">{errors.brandName.message}</p>
@@ -91,14 +91,14 @@ export default function CampaignForm({ initialData, mode }: CampaignFormProps) {
 
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label htmlFor="startDate" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="startDate" className="block text-sm font-medium text-gray-900">
             Start Date
           </label>
           <input
             type="date"
             id="startDate"
             {...register('startDate')}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
           />
           {errors.startDate && (
             <p className="mt-1 text-sm text-red-600">{errors.startDate.message}</p>
@@ -106,14 +106,14 @@ export default function CampaignForm({ initialData, mode }: CampaignFormProps) {
         </div>
 
         <div>
-          <label htmlFor="endDate" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="endDate" className="block text-sm font-medium text-gray-900">
             End Date
           </label>
           <input
             type="date"
             id="endDate"
             {...register('endDate')}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
           />
           {errors.endDate && (
             <p className="mt-1 text-sm text-red-600">{errors.endDate.message}</p>
@@ -122,18 +122,18 @@ export default function CampaignForm({ initialData, mode }: CampaignFormProps) {
       </div>
 
       <div>
-        <label htmlFor="budget" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="budget" className="block text-sm font-medium text-gray-900">
           Budget
         </label>
         <div className="mt-1 relative rounded-md shadow-sm">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <span className="text-gray-500 sm:text-sm">$</span>
+            <span className="text-gray-900 sm:text-sm">$</span>
           </div>
           <input
             type="number"
             id="budget"
             {...register('budget')}
-            className="mt-1 block w-full pl-7 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            className="mt-1 block w-full pl-7 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
             placeholder="0.00"
             step="0.01"
           />
@@ -144,14 +144,14 @@ export default function CampaignForm({ initialData, mode }: CampaignFormProps) {
       </div>
 
       <div>
-        <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-900">
           Image URL
         </label>
         <input
           type="url"
           id="imageUrl"
           {...register('imageUrl')}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
         />
         {errors.imageUrl && (
           <p className="mt-1 text-sm text-red-600">{errors.imageUrl.message}</p>
@@ -159,14 +159,14 @@ export default function CampaignForm({ initialData, mode }: CampaignFormProps) {
       </div>
 
       <div>
-        <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="description" className="block text-sm font-medium text-gray-900">
           Description
         </label>
         <textarea
           id="description"
           rows={4}
           {...register('description')}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
         />
         {errors.description && (
           <p className="mt-1 text-sm text-red-600">{errors.description.message}</p>
@@ -174,14 +174,14 @@ export default function CampaignForm({ initialData, mode }: CampaignFormProps) {
       </div>
 
       <div>
-        <label htmlFor="targetAudience" className="block text-sm font-medium text-gray-700">
+        <label htmlFor="targetAudience" className="block text-sm font-medium text-gray-900">
           Target Audience
         </label>
         <input
           type="text"
           id="targetAudience"
           {...register('targetAudience')}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
         />
         {errors.targetAudience && (
           <p className="mt-1 text-sm text-red-600">{errors.targetAudience.message}</p>
